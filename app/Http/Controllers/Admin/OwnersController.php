@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Owner; //エロクアント
+use Illuminate\Support\Facades\DB; //クエリビルだkueribiruda
+use Carbon\Carbon;
 
 class OwnersController extends Controller
 {
@@ -20,7 +23,26 @@ class OwnersController extends Controller
 
     public function index()
     {
-        dd('オーナーテスト');
+        // Carbon
+        $data_now = Carbon::now();
+        $data_parse = Carbon::parse(now());
+
+        echo $data_now . PHP_EOL;
+        echo $data_parse;
+
+        //エロクアント
+        $e_all = Owner::all();
+        // クエリビルダ
+        $q_get = DB::table('owners')->select('name', 'created_at')->get();
+        // $q_first = DB::table('owners')->select('name')->first();
+        // コレクション
+    //     $c_test = collect([
+    //         'name' => 'テスト',
+    //     ]);
+    //     var_dump($q_first);
+    //     dd($e_all, $q_all, $q_first, $c_test);
+        return view('admin.owners.index',
+        compact('e_all', 'q_get'));
     }
 
     /**
