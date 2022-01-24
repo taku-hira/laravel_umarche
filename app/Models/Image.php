@@ -11,7 +11,7 @@ class Image extends Model
     use HasFactory;
     protected $fillable = [
         'owner_id',
-        'filename',
+        'name',
     ];
 
     public function owner()
