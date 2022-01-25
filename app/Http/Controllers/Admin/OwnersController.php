@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rules;
 use Throwable;
+use Illuminate\Support\Facades\Storage;
 
 class OwnersController extends Controller
 {

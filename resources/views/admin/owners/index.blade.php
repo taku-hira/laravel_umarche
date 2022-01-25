@@ -49,9 +49,9 @@
                                 </table>
                                 {{ $owners->links() }}
                             </div>
-                          </div>
                         </div>
-                      </section>
+                    </div>
+                    </section>
                     {{--エロクアント
                     @foreach ($e_all as $e_owner)
                         {{ $e_owner->name }}
@@ -74,5 +74,5 @@
         document.getElementById('delete_' + e.dataset.id).submit();
         }
         }
-        </script>
+    </script>
 </x-app-layout>
